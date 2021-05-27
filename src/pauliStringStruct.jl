@@ -11,7 +11,7 @@ struct PauliString
 
 
 	function PauliString(N::Int, site::Vector{Int}, baseIdx::Vector{Int}, coef::Number)
-		length(baseIdx[baseIdx.>3]) == 0 || throw(ArgumentError("baseIdx $(baseIdx) containes unvalid arguement >3.
+		length(baseIdx[baseIdx.>3]) == 0 || throw(ArgumentError("baseIdx $(baseIdx) containes unvalid arguments >3.
 									Note the convention is: (1,2,3) = (σx, σy, σz)"))
 		return new(N, site, baseIdx, Ref(convert(ComplexF64, coef)))
 	end
