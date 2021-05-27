@@ -269,8 +269,8 @@ function adH(H, p, order)
 			
 			# get operator strings in H with support overlaping with pauli_string
 			sup_string = getSupport(pauli_string)
-			H_accesible = filter(x-> getSupport(x)[1]<=ySup[2] && getSupport(x)[2]>=ySup[1], H)
-			res = filter(x->x!=nothing, [commutePauli(x,y)  for x in H_accesible])
+			H_accesible = filter(x-> getSupport(x)[1]<=sup_string[2] && getSupport(x)[2]>=sup_string[1], H)
+			res = filter(x->x!=nothing, [commutePauli(x,pauli_string)  for x in H_accesible])
 			
 			#res = filter(x->x!=nothing, [commutePauli(x,y)  for x in H])
 			
